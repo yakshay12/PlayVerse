@@ -84,7 +84,7 @@ const Auth = () => {
                             {variant == 'login' ? 'login' : 'Sign up'}
                         </button>
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
-                            <div 
+                            {/* <div 
                                 onClick={() => signIn ('google', { callbackUrl: '/profiles'})}
                                 className="
                                     w-10
@@ -100,8 +100,8 @@ const Auth = () => {
                                 "
                             >
                                 <FcGoogle size={30} />
-                            </div>
-                            <div 
+                            </div> */}
+                            {/* <div 
                                 onClick={() => signIn('github', { callbackUrl: '/profiles'})}
                                 className="
                                     w-10
@@ -117,7 +117,7 @@ const Auth = () => {
                                 "
                             >
                                 <FaGithub size={30} />
-                            </div>
+                            </div> */}
                         </div>
                         
                         <p className="text-neutral-500 mt-12">

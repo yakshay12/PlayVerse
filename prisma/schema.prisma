@@ -4,13 +4,15 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+//should generate a JavaScript/TypeScript client (prisma-client-js) for database queries.
 generator client {
   provider = "prisma-client-js"
 }
 
+//Defines MongoDB as the database provider
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL") //Uses an environment variable (DATABASE_URL) to connect to the database.
 }
 
 model User {
