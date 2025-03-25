@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 import useMovie from "@/hooks/useMovie";
-import { divide } from "lodash";
+// import { divide } from "lodash";
 
 const Watch = () => {
     const router = useRouter();

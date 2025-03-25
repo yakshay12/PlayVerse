@@ -3,8 +3,14 @@ import { isEmpty } from 'lodash';
 
 import MovieCard from './MovieCard';
 
+interface Movie {
+    id: string;
+    title: string;
+    // Add other properties your movie object contains
+}
+
 interface MovieListProps {
-    data: Record<string, any>[];
+    data: Movie[];
     title: string;
 }
 

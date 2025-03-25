@@ -1,8 +1,8 @@
 import React from "react";
 
-interface InputProps{
+interface InputProps {
     id: string;
-    onChange: any;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value: string;
     label: string;
     type?: string;
@@ -13,7 +13,7 @@ const Input: React.FC<InputProps> = ({
     onChange,
     value,
     label,
-    type
+    type = "text" // Default to "text" if no type is provided
 }) => {
     return (
         <div className="relative">
@@ -29,7 +29,6 @@ const Input: React.FC<InputProps> = ({
                 pt-6
                 pb-1
                 w-full
-                text-md
                 text-md
                 text-white
                 bg-neutral-700
@@ -62,7 +61,7 @@ const Input: React.FC<InputProps> = ({
                 {label}
             </label>
         </div>
-    )
-}
+    );
+};
 
 export default Input;

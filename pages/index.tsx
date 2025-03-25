@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieList from "@/components/MovieList";
 import useMovieList from "@/hooks/useMovieList";
-import useFavorites from "@/hooks/useFavorites";
+// import useFavorites from "@/hooks/useFavorites";
 //we are signout using home page
 export async function getServerSideProps(context: NextPageContext) {      //protection for the Home route
   const session = await getSession(context);
@@ -27,7 +27,7 @@ export async function getServerSideProps(context: NextPageContext) {      //prot
 
 export default function Home() {
   const { data: movies = [] } = useMovieList();
-  const { data: favorites = [] } = useFavorites();
+  // const { data: favorites = [] } = useFavorites();
 
   return (
     <>

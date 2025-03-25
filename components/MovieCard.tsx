@@ -1,35 +1,42 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-
+import Image from 'next/image';
 import { BsFillPlayFill } from 'react-icons/bs'; 
-import FavoriteButton from './FavoriteButton';
 
-interface MovieCardProps{
-    data: Record<string, any>;
+interface MovieData {
+    id: string;
+    thumbnailUrl: string;
+    duration: string;
+    genre: string;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({
-    data
-}) => {
+interface MovieCardProps {
+    data: MovieData;
+}
+
+const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     const router = useRouter();
 
     return (
         <div className='group bg-zinc-900 col-span relative h-[12vw]'>
-            <img 
-            className='
-                cursor-pointer 
-                object-cover
-                transition
-                duration
-                shadow-xl
-                rounded-md
-                group-hover:opacity-90
-                sm:group-hover:opacity-0
-                delay-300
-                w-full
-                h-[12vw]
-            ' 
-            src={data.thumbnailUrl} alt="Thumbnail" />
+            <Image 
+                className='
+                    cursor-pointer 
+                    object-cover
+                    transition
+                    duration
+                    shadow-xl
+                    rounded-md
+                    group-hover:opacity-90
+                    sm:group-hover:opacity-0
+                    delay-300
+                    w-full
+                    h-[12vw]
+                ' 
+                src={data.thumbnailUrl} 
+                alt="Thumbnail"
+                fill
+            />
             <div 
                 className='
                     opacity-0
@@ -49,18 +56,23 @@ const MovieCard: React.FC<MovieCardProps> = ({
                     group-hover:opacity-100
                 '
             >
-                <img 
-                className='
-                    cursor-pointer
-                    object-cover
-                    transition
-                    duration
-                    shadow-xl
-                    rounded-t-md
-                    w-full
-                    h-[12vw]
-                '
-                src={data.thumbnailUrl} alt="Thumbnail" />
+                <Image 
+                    className='
+                        cursor-pointer
+                        object-cover
+                        transition
+                        duration
+                        shadow-xl
+                        rounded-t-md
+                        w-full
+                        h-[12vw]
+                    '
+                    src={data.thumbnailUrl} 
+                    alt="Thumbnail"
+                    width={500}
+                    height={300}
+                    layout="responsive"
+                />
                 <div 
                     className='
                         z-10
@@ -75,24 +87,24 @@ const MovieCard: React.FC<MovieCardProps> = ({
                     '>
                         <div className='flex flex-row items-center gap-3'>
                             <div 
-                            className='
-                                cursor-pointer
-                                w-6
-                                h-6
-                                lg:w-10
-                                lg:h-10
-                                bg-white
-                                rounded-full
-                                flex
-                                justify-center
-                                items-center
-                                transition
-                                hover:bg-neutral-300
-                            '
-                            onClick={() => router.push(`/watch/${data?.id}`)}>
+                                className='
+                                    cursor-pointer
+                                    w-6
+                                    h-6
+                                    lg:w-10
+                                    lg:h-10
+                                    bg-white
+                                    rounded-full
+                                    flex
+                                    justify-center
+                                    items-center
+                                    transition
+                                    hover:bg-neutral-300
+                                '
+                                onClick={() => router.push(`/watch/${data?.id}`)}
+                            >
                                 <BsFillPlayFill size={30} />
                             </div>
-                            {/* <FavoriteButton movieId={data?.id}/> */}
                         </div>
 
                         <p className='text-green-400 font-semibold mt-4'>
