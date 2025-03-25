@@ -6,7 +6,9 @@ import MovieCard from './MovieCard';
 interface Movie {
     id: string;
     title: string;
-    // Add other properties your movie object contains
+    thumbnailUrl: string;
+    duration: string;
+    genre: string;
 }
 
 interface MovieListProps {
